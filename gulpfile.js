@@ -214,7 +214,7 @@ gulp.task('watch', function() {
 
 // Default task
 gulp.task('default', function(callback) {
-    runSeq('clean', 'build-templates', 'generate', 'express', function() {
+    runSeq('clean', 'build-templates', 'generate', function() {
       console.log('default mode');
       callback();
     });
