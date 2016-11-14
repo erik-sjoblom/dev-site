@@ -1,0 +1,68 @@
+
+$old-ie: false !default;
+@mixin old-ie {
+  // Only use this content if we're dealing with old IE
+  @if $old-ie {
+    @content;
+  }
+}
+
+
+
+@mixin small-phone {
+  @media screen and (max-width: #{$small-phone-max}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: #{$phone-max}) {
+    @content;
+  }
+}
+
+@mixin small-tablet {
+  @media screen and (max-width: #{$tablet-max - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: #{$tablet-max}) {
+    @content;
+  }
+}
+
+@mixin large-tablet {
+ @media screen and (max-width: #{$widescreen-min}) {
+    @content;
+  } 
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$tablet-max}) {
+    @content;
+  }
+}
+
+@mixin widescreen {
+ @media screen and (min-width: #{$widescreen-min}) {
+    @content;
+  } 
+}
+
+
+
+@mixin clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+  }
+}
+
+
+

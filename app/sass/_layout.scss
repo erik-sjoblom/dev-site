@@ -1,0 +1,333 @@
+
+* {
+  @include prefixer(box-sizing, border-box, webkit moz spec);
+  outline: 0;
+}
+
+::-webkit-input-placeholder {
+  color: $dark-grey;
+}
+
+:-moz-placeholder {
+  color: $dark-grey;
+}
+
+::-moz-placeholder {
+  color: $dark-grey;
+}
+
+:-ms-input-placeholder {
+  color: $dark-grey;
+}
+
+::selection {
+  background: $yellow;
+  color: $white;
+}
+
+::-moz-selection {
+  background: $yellow;
+  color: $white;
+}
+
+
+
+html {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  font-size: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+
+
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+
+
+footer,
+header,
+nav,
+aside,
+section,
+article {
+  display: block;
+}
+
+
+
+section {
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+h1,
+h2 {
+  border: 0;
+  font: inherit;
+  font-family: $roboto;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 300;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 300;
+  margin: 0.67em 0;
+}
+
+
+p {
+  border: 0;
+  font: inherit;
+  font-family: $roboto;
+  font-size: 16px;
+  line-height: 1.8;
+  color: $dark-grey;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+
+
+a {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+a,
+a:focus {
+  text-decoration: none;
+}
+
+a:focus {
+  color: $dark-turquise !important;
+}
+
+body a:focus {
+  color: $light-yellow;
+}
+
+a:hover {
+  color: $yellow !important;
+  text-decoration: none !important;
+}
+
+
+
+i {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+
+
+ul {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  list-style: none;
+}
+
+li {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+
+
+img {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+
+
+
+
+
+
+.container {
+  @include tablet {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+
+
+
+
+
+.site-header {
+  @include transition(all .25s ease 0s);
+  background-color: $white;
+  border-bottom: 1px solid rgba(82, 87, 135, .2);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  
+  .container {
+    @include desktop {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .header-container {
+    position: relative;
+    padding-bottom: 25px;
+    padding-top: 25px;
+  }
+  .logo {
+    @include transition(all .25s ease-in-out 0);
+    color: $black;
+    
+    &, & a {
+      font-family: $roboto;
+      font-size: 22px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+    
+    a:hover {
+      color: $white;
+    }
+  }
+}
+
+
+
+
+
+
+
+.site-footer {
+  visibility: visible;
+  background-color: $darker-grey;
+  padding-top: 30px;
+  
+  @include tablet {
+    padding-top: 90px;
+  }
+  
+  .footer-copyright-container {
+    background-color: $light-black;
+    border-top: 1px solid $darkest-grey;
+    margin-top: 25px;
+    padding: 20px 0;
+  }
+  
+  .footer-copyright {
+    color: rgba(255, 255, 255, .75);
+    
+    a {
+      color: $white;
+    }
+  }
+}
+
+
+
+
+
+
+
+.top-link-button {
+  @include transition(opacity 0.3s 0s, visibility 0s 0.3s);
+  background: url('../images/top-link-button.svg') center 50% no-repeat rgba(0, 0, 0, .8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+  position: fixed;
+  bottom: 25px;
+  right: 10px;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  
+  @include desktop {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  @include widescreen {
+    bottom: 30px;
+    height: 60px;
+    right: 30px;
+    width: 60px;
+  }
+  
+  &.mt-fade-out {
+    @include transition(opacity 0.3s 0s, visibility 0s 0s);
+    opacity: .5;
+  
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  &.mt-is-visible {
+    @include transition(opacity 0.3s 0s, visibility 0s 0s);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.no-touch .top-link-button:hover {
+  @include transition(opacity 0.3s 0s, visibility 0s 0s);
+  background-color: $salmon-red;
+  opacity: 1;
+}
+
+
+
