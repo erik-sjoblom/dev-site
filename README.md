@@ -1,6 +1,6 @@
 # dev site
 
-### to install the resources
+### to install the dependencies
 
 > $ npm install
 
