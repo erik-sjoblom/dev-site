@@ -1,2 +1,24 @@
 
+.indent {
+  padding-left: 0.5rem;
+  
+  @include small-tablet {
+    padding-left: 0.75rem;
+    
+  }
+  
+  @include large-tablet {
+    padding-left: 0.85rem;
+    
+  }
+  
+  @include desktop {
+    padding-left: 1.25rem;
+  }
+  
+  @include widescreen {
+    padding-left: 1.45rem;
+    
+  }
+}
 

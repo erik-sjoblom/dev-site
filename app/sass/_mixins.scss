@@ -9,59 +9,46 @@ $old-ie: false !default;
 
 
 
-@mixin small-phone {
-  @media screen and (max-width: #{$small-phone-max}) {
-    @content;
-  }
-}
-
-@mixin phone {
-  @media screen and (max-width: #{$phone-max}) {
-    @content;
-  }
-}
-
 @mixin small-tablet {
-  @media screen and (max-width: #{$tablet-max - 1px}) {
+  @media screen and (min-width: #{$small-tablet-width}) {
     @content;
   }
 }
 
-@mixin tablet {
-  @media screen and (max-width: #{$tablet-max}) {
+@mixin small-tablet-down {
+  @media screen and (max-width: #{$large-tablet-width - 0.0625em}) {
     @content;
   }
 }
 
 @mixin large-tablet {
- @media screen and (max-width: #{$widescreen-min}) {
+  @media screen and (min-width: #{$large-tablet-width}) {
     @content;
-  } 
+  }
+}
+
+@mixin large-tablet-down {
+  @media screen and (max-width: #{$desktop-width - 0.0625em}) {
+    @content;
+  }
 }
 
 @mixin desktop {
-  @media screen and (min-width: #{$tablet-max}) {
+  @media screen and (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @media screen and (min-width: #{$widescreen-width - 0.0625em}) {
     @content;
   }
 }
 
 @mixin widescreen {
- @media screen and (min-width: #{$widescreen-min}) {
+ @media screen and (min-width: #{$widescreen-width}) {
     @content;
   } 
-}
-
-
-
-@mixin clearfix {
-  &:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-    font-size: 0;
-  }
 }
 
 

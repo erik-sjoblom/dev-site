@@ -36,10 +36,10 @@ $roboto: 'Roboto' ,Helvetica, Arial, sans-serif;
 
 /* breakpoints */
 
-$small-phone-max: 320px;
-$phone-max: 640px;
-$tablet-max: 768px;
-$widescreen-min: 1024px;
+$small-tablet-width: 34em; // 544px
+$large-tablet-width: 48em; // 768px
+$desktop-width: 62em; // 992px
+$widescreen-width: 75em; // 1200px
 
 
 
