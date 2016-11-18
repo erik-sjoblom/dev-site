@@ -34,7 +34,6 @@ gulp.task('styles', function() {
   return gulp.src('app/sass/**/*.scss')
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
     .pipe(autoprefixer('last 2 version'))
-    .pipe(gulp.dest('dist/css'))
     .pipe(cleanCSS())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist/css'))
@@ -73,7 +72,7 @@ gulp.task('images', function() {
 
 // Build Templates
 gulp.task('build-templates', function() {
-  return gulp.src("./app/partials/**/*.html")
+  return gulp.src("./app/js/myApp/**/*.html")
     .pipe(ngHtml2Js({
       moduleName: "htmlPartials",
       prefix: "/partials/"
@@ -95,7 +94,6 @@ gulp.task('vendor-js', function() {
     './app/js/vendor/bootstrap.min.js'
   ])
     .pipe(concat('vendor.js'))
-    .pipe(gulp.dest('./dist/js/'))
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('./dist/js/'))
@@ -118,7 +116,6 @@ gulp.task('build-js', function () {
   return b.bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())
-    .pipe(gulp.dest('./dist/js'))
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('./dist/js'))
@@ -146,7 +143,7 @@ gulp.task('html', function() {
 // Clean
 gulp.task('clean', function() {
     return (function() {
-      del.sync(['dist/*']);
+      del.sync(['dist/*', '.templateCache']);
       console.log('Clean task complete.');
     })();
 });

@@ -7,7 +7,7 @@
     .directive('myHeader', function() {
       return {
         restrict: 'E',
-        templateUrl: '/partials/global/header.html'
+        templateUrl: '/partials/global-content/header.html'
       }
     });
   

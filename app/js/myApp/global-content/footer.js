@@ -7,7 +7,7 @@
     .directive('myFooter', function() {
       return {
         restrict: 'E',
-        templateUrl: '/partials/global/footer.html'
+        templateUrl: '/partials/global-content/footer.html',
       }
     });
   

@@ -5,10 +5,12 @@
   angular
     .module('myApp')
     .config(function($routeProvider){
-      $routeProvider.when("/", {
-        templateUrl: "/partials/views/main.html"
+      $routeProvider.when('/', {
+        templateUrl: '/partials/page-content/home.html'
       })
-      .otherwise('/');
+      .otherwise({
+           redirectTo: '/'
+      });
     });
   
 })();

@@ -2,14 +2,27 @@
 <html lang="en" xmlns:ng="http://angularjs.org">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dev Site</title>
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/screen.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/vendor.min.css" rel="stylesheet">
+    <link href="css/screen.min.css" rel="stylesheet">
   </head>
   <body ng-app="myApp" class="home">
-    <ng-view></ng-view>
+    
+    <my-header></my-header>
+    
+    <section class="main-content">
+      
+      <ng-view autoscroll="true"></ng-view>
+      
+    </section> <!-- END .main-content -->
+    
+    <my-footer></my-footer>
+    
     <a href="#" class="top-link-button">Top</a>
+    
+    
     
     <script src="js/vendor.min.js"></script>
     <script src="js/bundle.min.js"></script>

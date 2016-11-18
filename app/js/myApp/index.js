@@ -15,6 +15,5 @@ require('../../../.templateCache/partials.js');
 require('./router.js');
 require('./global-content/header.js');
 require('./global-content/footer.js');
-require('./page-content/my-content.js');
 require('./functional-components/top-link-button.js');
 
