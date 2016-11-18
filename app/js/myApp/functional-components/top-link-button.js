@@ -8,19 +8,21 @@
       return {
         restrict: 'C',
         link: function(scope, elem, attrs) {
-          jQuery(window).scroll(function() {
-            if(jQuery(this).scrollTop() > 300) {
-              jQuery(".top-link-button").addClass("mt-is-visible");
-            } else {
-              jQuery(".top-link-button").addClass("mt-fade-out")
-              jQuery(".top-link-button").removeClass("mt-is-visible mt-fade-out");
-            }
-          });
-          jQuery(".top-link-button").on("click", function(e) {
-            e.preventDefault();
-            jQuery("body,html").animate({
-              scrollTop: 0
-            }, 700);
+          jQuery(function($) {
+            $(window).scroll(function() {
+              if($(this).scrollTop() > 300) {
+                $('.top-link-button').addClass('top-link-visible');
+              } else {
+                $('.top-link-button').removeClass('top-link-visible');
+              }
+            });
+            $('.top-link-button').on('touchstart click', function(e) {
+              e.stopPropagation();
+              e.preventDefault();
+              $('body, html').animate({
+                scrollTop: 0
+              }, 700);
+            });
           });
         }
       }
