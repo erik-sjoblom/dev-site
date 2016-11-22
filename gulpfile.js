@@ -90,7 +90,7 @@ gulp.task('build-templates', function() {
 // Vendor Scripts
 gulp.task('vendor-js', function() {
   return gulp.src([
-    './app/js/vendor/jquery-1.12.4.js',
+    './node_modules/jquery/dist/jquery.min.js',
     './node_modules/tether/dist/js/tether.min.js',
     './node_modules/bootstrap/dist/js/bootstrap.min.js'
   ])
